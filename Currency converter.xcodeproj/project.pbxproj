@@ -13,6 +13,10 @@
 		534E77CE25305666001E8426 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534E77CC25305666001E8426 /* Main.storyboard */; };
 		534E77D025305669001E8426 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 534E77CF25305669001E8426 /* Assets.xcassets */; };
 		534E77D325305669001E8426 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 534E77D125305669001E8426 /* LaunchScreen.storyboard */; };
+		536BEBF32531E2CB00619940 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BEBF22531E2CB00619940 /* APIManager.swift */; };
+		536BEBF62532027100619940 /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BEBF52532027100619940 /* ErrorManager.swift */; };
+		536BEBFA2532114600619940 /* APICurrencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BEBF92532114600619940 /* APICurrencyManager.swift */; };
+		536BEBFE2532D39700619940 /* CurrentCurency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536BEBFD2532D39700619940 /* CurrentCurency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		534E77CF25305669001E8426 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		534E77D225305669001E8426 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		534E77D425305669001E8426 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		536BEBF22531E2CB00619940 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		536BEBF52532027100619940 /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		536BEBF92532114600619940 /* APICurrencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICurrencyManager.swift; sourceTree = "<group>"; };
+		536BEBFD2532D39700619940 /* CurrentCurency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentCurency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 		534E77C525305666001E8426 /* Currency converter */ = {
 			isa = PBXGroup;
 			children = (
+				536BEBF22531E2CB00619940 /* APIManager.swift */,
+				536BEBF92532114600619940 /* APICurrencyManager.swift */,
+				536BEBFD2532D39700619940 /* CurrentCurency.swift */,
+				536BEBF52532027100619940 /* ErrorManager.swift */,
 				534E77C625305666001E8426 /* AppDelegate.swift */,
 				534E77C825305666001E8426 /* SceneDelegate.swift */,
 				534E77CA25305666001E8426 /* ViewController.swift */,
@@ -137,9 +149,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				536BEBFE2532D39700619940 /* CurrentCurency.swift in Sources */,
+				536BEBF32531E2CB00619940 /* APIManager.swift in Sources */,
 				534E77CB25305666001E8426 /* ViewController.swift in Sources */,
 				534E77C725305666001E8426 /* AppDelegate.swift in Sources */,
+				536BEBFA2532114600619940 /* APICurrencyManager.swift in Sources */,
 				534E77C925305666001E8426 /* SceneDelegate.swift in Sources */,
+				536BEBF62532027100619940 /* ErrorManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
