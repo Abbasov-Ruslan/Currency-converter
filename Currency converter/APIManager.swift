@@ -72,7 +72,7 @@ extension APIManager {
         return dataTask
     }
     
-    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, comlitionHandler: @escaping
+    func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, complitionHandler: @escaping
                     (APIResult<T>) -> Void) {
         
         let dataTask = JSONTaskWith(request: request) { (json, response, error) in
@@ -85,7 +85,7 @@ extension APIManager {
                 }
                 
                 if let value = parse(json) {
-                    comlitionHandler(.Succes(value))
+                    complitionHandler(.Succes(value))
                 } else {
                     let error = NSError(domain: CCNetworkingErrorDomain, code: 200, userInfo: nil)
                 }

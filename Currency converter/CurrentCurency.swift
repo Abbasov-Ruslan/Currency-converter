@@ -17,18 +17,18 @@ struct CurrentCurency {
 
 extension CurrentCurency: JSONDecodable {
     init?(JSON: [String : AnyObject]) {
-        guard let ID = JSON["ID"] as? String,
-        let charCode = JSON["CharCode"] as? String,
-        let name = JSON["Name"] as? String,
-        let value = JSON["Value"] as? Double else {
-            return nil
-        }
-        
-        self.ID = ID
-        self.charCode = charCode
-        self.name = name
-        self.value = value
-        
+            let dictionary = JSON["USD"] as? [String: AnyObject]
+        guard let ID = dictionary?["ID"] as? String,
+              let charCode = dictionary!["CharCode"] as? String,
+              let name = dictionary!["Name"] as? String,
+              let value = dictionary!["Value"] as? Double else {
+                return nil
+            }
+            self.ID = ID
+            self.charCode = charCode
+            self.name = name
+            self.value = value
+            
     }
 }
 

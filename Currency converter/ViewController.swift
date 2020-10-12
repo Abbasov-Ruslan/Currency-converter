@@ -9,15 +9,16 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController {
-    @IBOutlet weak var CurencyLabel: UILabel!
     
     
-        lazy var currencyManager = APICurrencyManager(apiKey: "2341234")
-        
+       // lazy var currencyManager = APICurrencyManager(apiKey: "2341234")
+    lazy var currencyManager = APICurrencyManager()
+
     
     
     override func viewDidLoad() {
-        currencyManager.fetchCurrentCurrencyWith(currencyId: "R01020A") { (result) in
+//        currencyManager.fetchCurrentCurrencyWith(currencyId: "R01020A") { (result) in
+            currencyManager.fetchCurrentCurrencyWith() { (result) in
             switch result {
             case .Succes(let currentCurency):
                 self.updateUIWith(CurrentCurency: currentCurency)
@@ -38,8 +39,9 @@ class ViewController: UIViewController {
     func updateUIWith(CurrentCurency: CurrentCurency) {
       
         let text = String(CurrentCurency.value)
+    
         
-        self.CurencyLabel.text = text
+        print(text)
 
     }
     
