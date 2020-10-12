@@ -9,15 +9,25 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController {
+
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var LeftChangeCurrencyButton: UIButton!
+    @IBOutlet weak var rightChangeCurrencyButton: UIButton!
+    @IBOutlet weak var switchNumbersButton: UIButton!
+    @IBOutlet weak var leftCharCodeLabel: UILabel!
+    @IBOutlet weak var rightCharCodeLabel: UILabel!
+    @IBOutlet weak var leftNumberField: UITextField!
+    @IBOutlet weak var rightNumberField: UITextField!
     
     
-       // lazy var currencyManager = APICurrencyManager(apiKey: "2341234")
+    
+    
     lazy var currencyManager = APICurrencyManager()
 
     
     
     override func viewDidLoad() {
-//        currencyManager.fetchCurrentCurrencyWith(currencyId: "R01020A") { (result) in
             currencyManager.fetchCurrentCurrencyWith() { (result) in
             switch result {
             case .Succes(let currentCurency):
@@ -29,7 +39,6 @@ class ViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             default: break
             }
-            
         }
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -39,7 +48,7 @@ class ViewController: UIViewController {
     func updateUIWith(CurrentCurency: CurrentCurency) {
       
         let text = String(CurrentCurency.value)
-    
+        
         
         print(text)
 

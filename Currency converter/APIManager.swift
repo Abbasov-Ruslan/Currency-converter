@@ -28,11 +28,7 @@ enum APIResult<T>{
 
 protocol APIManager {
     var sessionConfiguration: URLSessionConfiguration {get}
-    var session: URLSession {get}
-    
-    //func JSONTaskWith(request: URLSession, complitionHandler:@escaping JSONComlitionHandler) -> JSONTask
-    //func fetch<T>(request: URLRequest, parse: @escaping ([String: AnyObject]) -> T?, complitionHandler:  APIResult<T>) -> Void
-    
+    var session: URLSession {get}    
 }
 
 extension APIManager {
