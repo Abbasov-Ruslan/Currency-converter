@@ -9,10 +9,11 @@ import Foundation
 import UIKit
 
 struct CurrentCurency {
-    let ID: String
-    let charCode: String
-    let name: String
-    let value: Double
+    var ID: String
+    var charCode: String
+    var name: String
+    var value: Double
+    var amount:Double
 }
 
 extension CurrentCurency: JSONDecodable {
@@ -28,6 +29,7 @@ extension CurrentCurency: JSONDecodable {
             self.charCode = charCode
             self.name = name
             self.value = value
+            self.amount = 0
             
     }
 }
@@ -46,7 +48,7 @@ extension CurrentCurency {
     return "\(String(name)) name"
   }
   
-  var appearentTemperatureString: String {
-    return "\(Double(value))value"
+  var valueDouble: Double {
+    return Double(value)
   }
 }
