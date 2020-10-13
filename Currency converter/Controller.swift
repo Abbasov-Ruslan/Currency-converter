@@ -9,25 +9,30 @@ import Foundation
 class Controller {
     lazy var currencyManager = APICurrencyManager()
     var AmountOfMoney = MoneyAmount()
-
+    var value: Double = 0
     
     init() {}
     
     
-    func getData() -> CurrentCurency {
-        var localCurrecy = CurrentCurency(ID: "", charCode: "", name: "", value: 0, amount: 0)
-        currencyManager.fetchCurrentCurrencyWith() { (result) in
+    func getData (charCode:String) {
+        currencyManager.fetchCurrentCurrencyWith() { [](result) in
             switch result {
             case .Succes(let currentCurency):
-                localCurrecy = currentCurency
+                let currency = CurrentDictionary(currentCurency: currentCurency, charCode: charCode)
+                self.value = currency?.value ?? 0
             case .Failure( _ as NSError):
                 break
             default:
                 break
             }
+            
         }
-        return localCurrecy
     }
     
+    func getCurrencyValue() -> Double{
+        return self.value
+    }
     
 }
+
+

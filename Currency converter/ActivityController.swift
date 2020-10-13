@@ -11,8 +11,7 @@ import UIKit
 class ActivityViewController: UIViewController {
 
     @IBOutlet weak var toggleActivityIndicator: UIActivityIndicatorView!
-
-
+    
     func toggleActivityIndicator(on:Bool) {
         if on {
             toggleActivityIndicator.startAnimating()
@@ -22,15 +21,14 @@ class ActivityViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        toggleActivityIndicator(on: true)
-        let controller = Controller.init()
-        var currency = controller.getData()
-        toggleActivityIndicator(on: false)
-       
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
+        toggleActivityIndicator(on: true)
+        let controller = Controller.init()
+        var data = controller.getData(charCode: "USD")
+        toggleActivityIndicator(on: false)
     self.performSegue(withIdentifier: "firstSeque", sender: nil)
     }
     

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Tpp-FI-HGt">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Tpp-FI-HGt">
                                 <rect key="frame" x="150" y="252" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -30,7 +30,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Конвертер валют" id="ywy-kN-uLe"/>
                     <connections>
-                        <outlet property="toggleActivityIndicator" destination="Tpp-FI-HGt" id="GKh-UD-w9f"/>
+                        <outlet property="toggleActivityIndicator" destination="Tpp-FI-HGt" id="chs-UZ-DeA"/>
                         <segue destination="Umj-Wr-wCk" kind="modal" identifier="firstSeque" modalPresentationStyle="fullScreen" id="1hI-tM-GZE"/>
                     </connections>
                 </viewController>
@@ -265,7 +265,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6l6-92-0yC"/>
+        <segue reference="ZQe-Kv-nUX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icons8-данные-в-обоих-направлениях-100" width="100" height="100"/>

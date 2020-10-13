@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     
     lazy var currencyManager = APICurrencyManager()
     var AmountOfMoney = MoneyAmount()
-    
+    var controller = Controller()
     
     @IBOutlet weak var rightNumberField: UITextField!
     
@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     
     @IBAction func leftAmountChanged(_ sender: Any) {
         AmountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
-        getData()
     }
     
     @IBAction func unwindToMainScreen(seque: UIStoryboardSegue) {
@@ -43,42 +42,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        controller.getData(charCode: "Value")
+        var num = controller.getCurrencyValue()
+        leftNumberField.text = String(num)
         }
     
     
-    func getData() {
-        currencyManager.fetchCurrentCurrencyWith() { [self] (result) in
-            switch result {
-            case .Succes(let currentCurency):
-                self.updateUIWith(CurrentCurency: currentCurency)
-                self.updateRightTextField(CurrentCurency: currentCurency, moneyAmount: AmountOfMoney)
-            case .Failure(let error as NSError):
-                let alertController = UIAlertController(title: "Unable to get data", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertController.addAction(okAction)
-                
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    
-    func updateUIWith(CurrentCurency: CurrentCurency) {
-//        let currentCurrencyValue = CurrentCurency.value
-//        let leftNumber = Mon
-//        let result = leftNumber * currentCurrencyValue
-//        self.rightNumberField.text = String(result)
-//        textFieldChanged(leftNumberField)
-        
-    }
-    
-    func updateRightTextField(CurrentCurency: CurrentCurency,moneyAmount:MoneyAmount) {
-        let currentCurrencyValue = CurrentCurency.value
-        let leftNumber = moneyAmount.leftMoneyAmount
-        let result = leftNumber * currentCurrencyValue
-        self.rightNumberField.text = String(result)
-    }
+
     
 }
 

@@ -81,13 +81,7 @@ class CurrencyList: UITableViewController {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        switch cell.textLabel?.text {
-        case "Рубль                                        RUB":
-            <#code#>
-        default:
-            <#code#>
-        }
+    
         
     }
 

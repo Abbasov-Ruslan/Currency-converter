@@ -7,134 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "19A51BE5-D5C4-4D6E-81AA-BC9BEB522DAF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Currency converter/APICurrencyManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "fetchCurrentCurrencyWith(complitionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D9CFCD66-6E52-4495-8D1D-8A4EF8B785DF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Currency converter/APICurrencyManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "fetchCurrentCurrencyWith(complitionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "D9CFCD66-6E52-4495-8D1D-8A4EF8B785DF - 382649b86e1f092e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Currency_converter.APICurrencyManager.fetchCurrentCurrencyWith(complitionHandler: (Currency_converter.APIResult&lt;Currency_converter.CurrentCurency&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Currency converter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslanabbasov/Library/Autosave%20Information/learnProjects/Currency%20converter/Currency%20converter/APICurrencyManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "149">
-               </Location>
-               <Location
-                  uuid = "D9CFCD66-6E52-4495-8D1D-8A4EF8B785DF - be5b09eecc717fe5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; Swift.Optional&lt;Currency_converter.CurrentCurency&gt; in Currency_converter.APICurrencyManager.fetchCurrentCurrencyWith(complitionHandler: (Currency_converter.APIResult&lt;Currency_converter.CurrentCurency&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Currency converter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslanabbasov/Library/Autosave%20Information/learnProjects/Currency%20converter/Currency%20converter/APICurrencyManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "83">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "816CFEE2-EC72-47A3-B80D-1CBAF3E13A93"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Currency converter/APICurrencyManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "fetchCurrentCurrencyWith(complitionHandler:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "693F94BD-74DD-45E8-96A6-F6BF6A66C401"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Currency converter/APICurrencyManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "fetchCurrentCurrencyWith(complitionHandler:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "693F94BD-74DD-45E8-96A6-F6BF6A66C401 - 382649b86e1f0807"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Currency_converter.APICurrencyManager.fetchCurrentCurrencyWith(complitionHandler: (Currency_converter.APIResult&lt;Currency_converter.CurrentCurency&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Currency converter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslanabbasov/Library/Autosave%20Information/learnProjects/Currency%20converter/Currency%20converter/APICurrencyManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "216">
-               </Location>
-               <Location
-                  uuid = "693F94BD-74DD-45E8-96A6-F6BF6A66C401 - be5b09eecc717eaf"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;) -&gt; Swift.Optional&lt;Currency_converter.CurrentCurency&gt; in Currency_converter.APICurrencyManager.fetchCurrentCurrencyWith(complitionHandler: (Currency_converter.APIResult&lt;Currency_converter.CurrentCurency&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Currency converter"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslanabbasov/Library/Autosave%20Information/learnProjects/Currency%20converter/Currency%20converter/APICurrencyManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "996">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "A94E621E-4B51-4230-839B-C40840B59658"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -142,10 +14,10 @@
             filePath = "Currency converter/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "getData()"
-            landmarkType = "7">
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,8 +30,8 @@
             filePath = "Currency converter/ActivityController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +46,8 @@
             filePath = "Currency converter/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -184,16 +56,160 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9E5A2AC3-9F12-4038-913C-B89868BE7278"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Currency converter/ActivityController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B8D443D1-8097-463F-B9B9-B96FE9894BEA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Currency converter/CurrencyDictionary.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "init(currentCurency:charCode:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A4D9905A-698B-4AF6-9101-2DF82AF2AAA4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Currency converter/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "fetch(request:parse:complitionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "86E5E978-461A-45D9-936C-3FD1EAFFEF75"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Currency converter/ActivityController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6B9DC8A9-D8C2-48F2-8886-69C5F33359B9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Currency converter/ActivityController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1CA2C79A-367B-4412-A67A-34C8AC302F7F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Currency converter/Controller.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "getData(charCode:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CA2C79A-367B-4412-A67A-34C8AC302F7F - bbe4202616adcc27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Currency_converter.APIResult&lt;Currency_converter.CurrentCurency&gt;) -&gt; () in Currency_converter.Controller.getData(charCode: Swift.String) -&gt; ()"
+                  moduleName = "Currency converter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslanabbasov/Library/Autosave%20Information/learnProjects/Currency%20converter/Currency%20converter/Controller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "273">
+               </Location>
+               <Location
+                  uuid = "1CA2C79A-367B-4412-A67A-34C8AC302F7F - bbe4202616adcc27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Currency_converter.APIResult&lt;Currency_converter.CurrentCurency&gt;) -&gt; () in Currency_converter.Controller.getData(charCode: Swift.String) -&gt; ()"
+                  moduleName = "Currency converter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslanabbasov/Library/Autosave%20Information/learnProjects/Currency%20converter/Currency%20converter/Controller.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "301">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A46E53BA-CEDF-4B35-8D17-809314A78BA9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../var/folders/8n/8jkn_z_n2gxbmpkn4n0800pc0000gn/T/xcode/scm/Currency converter/40bf6555e82974c0f43d549da43cc7113a75ded8/Currency converter/APICurrencyManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "session"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0FA70A67-0C0B-4351-ABC8-12FBA8A61565"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../../var/folders/8n/8jkn_z_n2gxbmpkn4n0800pc0000gn/T/xcode/scm/Currency converter/40bf6555e82974c0f43d549da43cc7113a75ded8/Currency converter/CurrentCurency.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "CurrentCurency"
+            landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

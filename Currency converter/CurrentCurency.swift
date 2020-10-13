@@ -9,46 +9,22 @@ import Foundation
 import UIKit
 
 struct CurrentCurency {
-    var ID: String
-    var charCode: String
-    var name: String
-    var value: Double
-    var amount:Double
+    var dictionary: [String: AnyObject]
 }
 
 extension CurrentCurency: JSONDecodable {
     init?(JSON: [String : AnyObject]) {
-            let dictionary = JSON["USD"] as? [String: AnyObject]
-        guard let ID = dictionary?["ID"] as? String,
-              let charCode = dictionary!["CharCode"] as? String,
-              let name = dictionary!["Name"] as? String,
-              let value = dictionary!["Value"] as? Double else {
-                return nil
-            }
-            self.ID = ID
-            self.charCode = charCode
-            self.name = name
-            self.value = value
-            self.amount = 0
-            
+        guard let dictionary = JSON["USD"] as? [String: AnyObject] else {
+            return nil
+        }
+        self.dictionary = dictionary
+        
     }
 }
 
 
 extension CurrentCurency {
-  var IDString: String {
-    return "\(String(ID)) ID"
-  }
-  
-  var charCodeString: String {
-    return "\(String(charCode)) charCode"
-  }
-  
-  var nameString: String {
-    return "\(String(name)) name"
-  }
-  
-  var valueDouble: Double {
-    return Double(value)
-  }
+    var returnDictionary:[String: AnyObject] {
+        return (dictionary)
+    }
 }
