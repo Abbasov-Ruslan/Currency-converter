@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  swift
 //  Currency converter
 //
 //  Created by Ruslan Abbasov on 09.10.2020.
@@ -26,30 +26,18 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var rightController = Controller()
     var leftCharCode = "USD"
     var rightCharCode = "RUB"
-
+    var leftCurrency:Bool? = nil
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-         self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
     }
-    
-    
-//    @IBAction func rightTextFieldEditingBegin(_ sender: Any) {
-////        rightNumberField.becomeFirstResponder()
-//        rightNumberField.selectAll(nil)
-//    }
-//
-//    @IBAction func leftTextFieldEditingBegin(_ sender: Any) {
-////        leftNumberField.becomeFirstResponder()
-//        leftNumberField.selectAll(nil)
-//    }
-    
-    
 
+    
     
     
     @IBAction func rightTextFieldChanged(_ sender: Any) {
@@ -70,37 +58,61 @@ class ViewController: UIViewController,UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-
+    
     
     @IBAction func unwindToMainScreen(seque: UIStoryboardSegue) {
+        leftController.getData(charCode: leftCharCode)
+        rightController.getData(charCode: rightCharCode)
     }
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        leftController.getData(charCode: leftCharCode)
-        rightController.getData(charCode: rightCharCode)
         rightNumberField.delegate = self
         leftNumberField.delegate = self
-        }
-    
-     override func viewDidAppear(_ animated: Bool) {
+        
         leftController.getData(charCode: leftCharCode)
         rightController.getData(charCode: rightCharCode)
+        
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        leftController.getData(charCode: leftCharCode)
+        rightController.getData(charCode: rightCharCode)
+        
+        let leftCurencyValue = leftController.getCurrencyValue()
+        let rightCurencyValue = rightController.getCurrencyValue()
+       
+        
+        if leftCurrency != nil {
+            if leftCurrency == false {
+            amountOfMoney.rightMoneyAmount = Double(rightNumberField.text ?? "0") ?? 0
+            let roundedValue = String(( amountOfMoney.rightMoneyAmount * rightCurencyValue / leftCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+            leftNumberField.text = String(roundedValue)
+            }
+            if leftCurrency == true {
+            amountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
+            let roundedValue = String(( amountOfMoney.leftMoneyAmount * leftCurencyValue / rightCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+            rightNumberField.text = String(roundedValue)
+        }
+    }
+}
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let currencyList = segue.destination as! CurrencyList
         if segue.identifier == "leftButtonSeque"{
             currencyList.leftCurrency = true
+            leftCurrency = true
         } else {            
             currencyList.leftCurrency = false
+            leftCurrency = false
         }
     }
     
     
 }
-    
-    
-    
+
+
+
 

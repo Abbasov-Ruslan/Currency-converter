@@ -75,7 +75,7 @@ extension APIManager {
             
             DispatchQueue.main.async(execute: {
                 guard let json = json else {
-                    if let error = error {
+                    if error != nil {
                     }
                     return
                 }
@@ -83,7 +83,7 @@ extension APIManager {
                 if let value = parse(json) {
                     complitionHandler(.Succes(value))
                 } else {
-                    let error = NSError(domain: CCNetworkingErrorDomain, code: 200, userInfo: nil)
+                    _ = NSError(domain: CCNetworkingErrorDomain, code: 200, userInfo: nil)
                 }
             })
         }

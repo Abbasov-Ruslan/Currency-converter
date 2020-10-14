@@ -97,14 +97,48 @@ class CurrencyList: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
             if let indexPath = self.tableView.indexPathForSelectedRow {
+                
                 let viewController = segue.destination as! ViewController
+                
+//                viewController.rightController.getData(charCode: viewController.rightCharCode)
+//                viewController.leftController.getData(charCode: viewController.leftCharCode)
+//
+//                let rightCurencyValue = viewController.rightController.getCurrencyValue()
+//                let leftCurencyValue = viewController.leftController.getCurrencyValue()
+                
                 if leftCurrency{
                     viewController.leftCharCodeLabel.text = charCodeArray[indexPath.row]
                     viewController.leftCharCode = charCodeArray[indexPath.row]
+                    viewController.leftCurrency = true
+                    
+                    viewController.rightController.getData(charCode: viewController.rightCharCode)
+                    viewController.leftController.getData(charCode: viewController.leftCharCode)
+
+//                    let rightCurencyValue = viewController.rightController.getCurrencyValue()
+//                    let leftCurencyValue = viewController.leftController.getCurrencyValue()
+                    
+//                    viewController.amountOfMoney.leftMoneyAmount = Double(viewController.leftNumberField.text ?? "0") ?? 0
+//                    let roundedValue = String(( viewController.amountOfMoney.leftMoneyAmount * leftCurencyValue / rightCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+//                    viewController.rightNumberField.text = String(roundedValue)
+                    
+                    
                 } else {
                     viewController.rightCharCodeLabel.text = charCodeArray[indexPath.row]
                     viewController.rightCharCode = charCodeArray[indexPath.row]
+                    viewController.leftCurrency = false
+                    
+                    viewController.rightController.getData(charCode: viewController.rightCharCode)
+                    viewController.leftController.getData(charCode: viewController.leftCharCode)
+
+//                    let rightCurencyValue = viewController.rightController.getCurrencyValue()
+//                    let leftCurencyValue = viewController.leftController.getCurrencyValue()
+                    
+//                    viewController.amountOfMoney.rightMoneyAmount = Double(viewController.rightNumberField.text ?? "0") ?? 0
+//                    let roundedValue = String(( viewController.amountOfMoney.rightMoneyAmount * rightCurencyValue / leftCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+//                    viewController.leftNumberField.text = String(roundedValue)
+                    
                 }
             }
     }
+    
 }
