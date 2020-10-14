@@ -24,15 +24,19 @@ class ViewController: UIViewController {
     }
     
     lazy var currencyManager = APICurrencyManager()
-    var AmountOfMoney = MoneyAmount()
-    var controller = Controller()
+    var amountOfMoney = MoneyAmount()
+    var leftController = Controller()
+    var rightController = Controller()
     
     @IBOutlet weak var rightNumberField: UITextField!
     
     
     
     @IBAction func leftAmountChanged(_ sender: Any) {
-        AmountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
+        let num = leftController.getCurrencyValue()
+        amountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
+        rightNumberField.text = String((num * amountOfMoney.leftMoneyAmount * 1000).rounded() / 1000)
+        
     }
     
     @IBAction func unwindToMainScreen(seque: UIStoryboardSegue) {
@@ -42,9 +46,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        controller.getData(charCode: "Value")
-        var num = controller.getCurrencyValue()
-        leftNumberField.text = String(num)
+        leftController.getData(charCode: "USD")
+        let leftNum = leftController.getCurrencyValue()
+        leftNumberField.text = String(leftNum)
+        rightController.getData(charCode: "RUB")
+        let rightNum = rightController.getCurrencyValue()
+        rightNumberField.text = String(rightNum)
         }
     
     
