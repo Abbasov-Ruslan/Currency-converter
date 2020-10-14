@@ -58,7 +58,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
-                                            <action selector="leftAmountChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="kcA-fM-Yba"/>
+                                            <action selector="leftTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="9G9-qq-gpN"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sPN-9a-7kc">
@@ -69,6 +69,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="rightTextFieldChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="Rbo-5o-d5E"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -84,19 +87,17 @@
                                 <rect key="frame" x="50" y="303" width="213" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bN3-nF-clz">
-                                        <rect key="frame" x="0.0" y="0.0" width="34.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="35" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="K52-yB-53A"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34.5" id="tkc-KI-zgE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQQ-Ey-9mX">
-                                        <rect key="frame" x="178.5" y="0.0" width="34.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RUB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQQ-Ey-9mX">
+                                        <rect key="frame" x="179" y="0.0" width="34" height="20.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34.5" id="Cpw-ac-GJa"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="rZt-lc-f90"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -105,7 +106,9 @@
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="bN3-nF-clz" firstAttribute="width" secondItem="pQQ-Ey-9mX" secondAttribute="width" id="ngD-Bs-3uy"/>
+                                    <constraint firstAttribute="trailing" secondItem="pQQ-Ey-9mX" secondAttribute="trailing" id="ZDj-tx-p3e"/>
+                                    <constraint firstItem="pQQ-Ey-9mX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bN3-nF-clz" secondAttribute="trailing" constant="144" id="v9b-mc-Ps5"/>
+                                    <constraint firstItem="bN3-nF-clz" firstAttribute="leading" secondItem="4hD-zX-2kd" secondAttribute="leading" id="vFv-Wb-zLS"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="gEO-Q3-qoM">
@@ -122,6 +125,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
+                                            <action selector="leftButtonTouched:" destination="E1T-CP-k43" eventType="touchUpInside" id="OQm-SJ-Dfd"/>
                                             <segue destination="CPZ-zh-7e3" kind="show" identifier="leftButtonSeque" id="6l6-92-0yC"/>
                                         </connections>
                                     </button>
@@ -136,6 +140,7 @@
                                             <color key="titleColor" name="AccentColor"/>
                                         </state>
                                         <connections>
+                                            <action selector="rightButtonTouched:" destination="E1T-CP-k43" eventType="touchUpInside" id="v8Y-BR-jIj"/>
                                             <segue destination="CPZ-zh-7e3" kind="show" identifier="rightButtonSeque" id="ZQe-Kv-nUX"/>
                                         </connections>
                                     </button>
@@ -165,12 +170,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="gEO-Q3-qoM" secondAttribute="bottom" constant="16" id="95S-91-7Ds"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TnK-Md-lFr" secondAttribute="trailing" constant="16" id="APg-tL-z7C"/>
                             <constraint firstItem="4hD-zX-2kd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-3.5" id="DWd-dd-aaI"/>
-                            <constraint firstItem="gEO-Q3-qoM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="a74-wV-StY"/>
+                            <constraint firstItem="gEO-Q3-qoM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="a74-wV-StY"/>
                             <constraint firstItem="cTK-ND-kbH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="154" id="f1L-pS-qWl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4hD-zX-2kd" secondAttribute="trailing" constant="57" id="jGl-ZJ-RVP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="TnK-Md-lFr" secondAttribute="bottom" constant="331" id="kJc-me-lQ6"/>
                             <constraint firstItem="TnK-Md-lFr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="71" id="lAC-Nb-ydG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gEO-Q3-qoM" secondAttribute="trailing" constant="16" id="lYz-6b-oh9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gEO-Q3-qoM" secondAttribute="trailing" constant="16" id="lYz-6b-oh9"/>
                             <constraint firstItem="4hD-zX-2kd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="259" id="ptY-MC-vXh"/>
                             <constraint firstItem="TnK-Md-lFr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="syP-ND-TUE"/>
                             <constraint firstItem="TnK-Md-lFr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tCn-Fr-dTX"/>
@@ -181,14 +186,15 @@
                     <connections>
                         <outlet property="LeftChangeCurrencyButton" destination="PpP-bY-ReK" id="1Is-cu-SF1"/>
                         <outlet property="leftCharCodeLabel" destination="bN3-nF-clz" id="2gJ-31-lLM"/>
-                        <outlet property="leftNumberField" destination="rMA-jX-OIm" id="HTW-nz-i8b"/>
+                        <outlet property="leftNumberField" destination="rMA-jX-OIm" id="IFV-HJ-PdL"/>
                         <outlet property="rightChangeCurrencyButton" destination="PMd-Sj-kso" id="SEn-0x-prc"/>
                         <outlet property="rightCharCodeLabel" destination="pQQ-Ey-9mX" id="Itp-yZ-OjC"/>
-                        <outlet property="rightNumberField" destination="sPN-9a-7kc" id="6lQ-Ei-KKK"/>
+                        <outlet property="rightNumberField" destination="sPN-9a-7kc" id="wgp-70-Ejw"/>
                         <outlet property="switchNumbersButton" destination="cTK-ND-kbH" id="KZ4-7M-wAR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="E1T-CP-k43" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5643.75" y="101.25"/>
         </scene>

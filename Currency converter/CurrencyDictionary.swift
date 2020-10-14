@@ -13,10 +13,20 @@ struct CurrentDictionary {
     var charCode: String
     var name: String
     var value: Double
-    var amount:Double
     
     
     init?(currentCurency:CurrentCurency, charCode:String) {
+        if charCode == "RUB" {
+            let rubID = "1B946"
+            let rubCharCode = "RUB"
+            let rubName = "Russian Ruble"
+            let rubValue = 1.0
+            
+            self.ID = rubID
+            self.charCode = rubCharCode
+            self.name = rubName
+            self.value = rubValue
+        } else {
         let dictionary = currentCurency.dictionary
         let localdictionary = dictionary[charCode]
         guard let ID = localdictionary?["ID"] as? String,
@@ -25,13 +35,14 @@ struct CurrentDictionary {
               let value = localdictionary?["Value"] as? Double else {
             return nil
         }
+            self.ID = ID
+            self.charCode = charCode
+            self.name = name
+            self.value = value
+    }
         
-        self.ID = ID
-        self.charCode = charCode
-        self.name = name
-        self.value = value
-        self.amount = 0
-        
+
+            
         
         func returnCharcode () -> String {
             return charCode

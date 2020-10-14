@@ -14,7 +14,7 @@ struct CurrentCurency {
 
 extension CurrentCurency: JSONDecodable {
     init?(JSON: [String : AnyObject]) {
-        guard let dictionary = JSON["USD"] as? [String: AnyObject] else {
+        guard let dictionary = JSON as? [String: AnyObject] else {
             return nil
         }
         self.dictionary = dictionary
