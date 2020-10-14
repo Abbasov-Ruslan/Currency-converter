@@ -14,14 +14,11 @@ struct CurrentCurency {
 
 extension CurrentCurency: JSONDecodable {
     init?(JSON: [String : AnyObject]) {
-        guard let dictionary = JSON as? [String: AnyObject] else {
-            return nil
-        }
+        let dictionary = JSON as [String: AnyObject]
         self.dictionary = dictionary
         
     }
 }
-
 
 extension CurrentCurency {
     var returnDictionary:[String: AnyObject] {

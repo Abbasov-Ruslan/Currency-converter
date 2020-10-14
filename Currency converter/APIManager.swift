@@ -11,7 +11,7 @@ typealias JSONTask = URLSessionDataTask
 typealias JSONComlitionHandler = ([String: AnyObject]?, HTTPURLResponse?,Error?) -> Void
 
 protocol JSONDecodable {
-  init?(JSON: [String: AnyObject])
+    init?(JSON: [String: AnyObject])
 }
 
 protocol FinalURLPoint {
@@ -35,7 +35,7 @@ extension APIManager {
     func JSONTaskWith(request: URLRequest, completeHandler:@escaping JSONComlitionHandler) -> JSONTask{
         
         let dataTask = session.dataTask(with: request) { (data, response, error) in
-        
+            
             guard let HTTPResponse = response as? HTTPURLResponse else {
                 
                 let userInfo = [
@@ -58,7 +58,7 @@ extension APIManager {
                         let json = try JSONSerialization.jsonObject(with: data!, options: []) as? [String: AnyObject]
                         completeHandler(json, HTTPResponse, nil)
                     } catch let error as NSError {
-                     completeHandler(nil, HTTPResponse, error)
+                        completeHandler(nil, HTTPResponse, error)
                     }
                 default:
                     print("We have got response status \(HTTPResponse.statusCode)")

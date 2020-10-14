@@ -74,17 +74,15 @@
 		534E77C525305666001E8426 /* Currency converter */ = {
 			isa = PBXGroup;
 			children = (
+				53A2C12A253763F9005FF30B /* Currency model */,
 				536BEBF22531E2CB00619940 /* APIManager.swift */,
 				536BEBF92532114600619940 /* APICurrencyManager.swift */,
 				5326849D2535A4B300BAD0FC /* ActivityController.swift */,
-				536BEBFD2532D39700619940 /* CurrentCurency.swift */,
-				535E7C092535F52000260CC7 /* CurrencyDictionary.swift */,
+				534E77C825305666001E8426 /* SceneDelegate.swift */,
+				534E77C625305666001E8426 /* AppDelegate.swift */,
 				5320C84925357E91002032B6 /* Controller.swift */,
 				534E77CA25305666001E8426 /* ViewController.swift */,
 				536BEBF52532027100619940 /* ErrorManager.swift */,
-				534E77C625305666001E8426 /* AppDelegate.swift */,
-				534664F82534B9F000980291 /* MoneyAmount.swift */,
-				534E77C825305666001E8426 /* SceneDelegate.swift */,
 				534E77CC25305666001E8426 /* Main.storyboard */,
 				53C07D332535D44900590612 /* CurrencyList.swift */,
 				534E77CF25305669001E8426 /* Assets.xcassets */,
@@ -92,6 +90,16 @@
 				534E77D425305669001E8426 /* Info.plist */,
 			);
 			path = "Currency converter";
+			sourceTree = "<group>";
+		};
+		53A2C12A253763F9005FF30B /* Currency model */ = {
+			isa = PBXGroup;
+			children = (
+				536BEBFD2532D39700619940 /* CurrentCurency.swift */,
+				534664F82534B9F000980291 /* MoneyAmount.swift */,
+				535E7C092535F52000260CC7 /* CurrencyDictionary.swift */,
+			);
+			path = "Currency model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

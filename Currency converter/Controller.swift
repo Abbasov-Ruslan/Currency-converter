@@ -25,7 +25,6 @@ class Controller {
             default:
                 break
             }
-            
         }
     }
     

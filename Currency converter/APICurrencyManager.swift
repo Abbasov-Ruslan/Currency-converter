@@ -39,9 +39,9 @@ final class APICurrencyManager: APIManager {
         return URLSession(configuration: self.sessionConfiguration)
     } ()
     
-
     
-
+    
+    
     init(sessionConfiguration: URLSessionConfiguration) {
         self.sessionConfiguration = sessionConfiguration
     }

@@ -27,31 +27,20 @@ struct CurrentDictionary {
             self.name = rubName
             self.value = rubValue
         } else {
-        let dictionary = currentCurency.dictionary
-        let localdictionary = dictionary[charCode]
-        guard let ID = localdictionary?["ID"] as? String,
-              let charCode = localdictionary?["CharCode"] as? String,
-              let name = localdictionary?["Name"] as? String,
-              let value = localdictionary?["Value"] as? Double else {
-            return nil
-        }
+            let dictionary = currentCurency.dictionary
+            let localdictionary = dictionary[charCode]
+            guard let ID = localdictionary?["ID"] as? String,
+                  let charCode = localdictionary?["CharCode"] as? String,
+                  let name = localdictionary?["Name"] as? String,
+                  let value = localdictionary?["Value"] as? Double else {
+                return nil
+            }
             self.ID = ID
             self.charCode = charCode
             self.name = name
             self.value = value
-    }
-        
-
-            
-        
-        func returnCharcode () -> String {
-            return charCode
         }
-        
-        func returnValue() -> Double {
-            return value
-        }
-        
     }
+    
 }
 

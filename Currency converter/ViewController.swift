@@ -36,7 +36,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
-
+    
     
     
     
@@ -83,21 +83,21 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
         let leftCurencyValue = leftController.getCurrencyValue()
         let rightCurencyValue = rightController.getCurrencyValue()
-       
+        
         
         if leftCurrency != nil {
             if leftCurrency == false {
-            amountOfMoney.rightMoneyAmount = Double(rightNumberField.text ?? "0") ?? 0
-            let roundedValue = String(( amountOfMoney.rightMoneyAmount * rightCurencyValue / leftCurencyValue * 100).rounded(.toNearestOrEven) / 100)
-            leftNumberField.text = String(roundedValue)
+                amountOfMoney.rightMoneyAmount = Double(rightNumberField.text ?? "0") ?? 0
+                let roundedValue = String(( amountOfMoney.rightMoneyAmount * rightCurencyValue / leftCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+                leftNumberField.text = String(roundedValue)
             }
             if leftCurrency == true {
-            amountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
-            let roundedValue = String(( amountOfMoney.leftMoneyAmount * leftCurencyValue / rightCurencyValue * 100).rounded(.toNearestOrEven) / 100)
-            rightNumberField.text = String(roundedValue)
+                amountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
+                let roundedValue = String(( amountOfMoney.leftMoneyAmount * leftCurencyValue / rightCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+                rightNumberField.text = String(roundedValue)
+            }
         }
     }
-}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let currencyList = segue.destination as! CurrencyList
