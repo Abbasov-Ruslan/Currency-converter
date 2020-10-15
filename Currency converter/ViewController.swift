@@ -1,10 +1,3 @@
-//
-//  swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 09.10.2020.
-//
-
 import UIKit
 import CoreLocation
 
@@ -20,6 +13,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var rightNumberField: UITextField!
     @IBOutlet weak var leftNumberField: UITextField!
     
+    // MARK: - Public Properties
+    
     lazy var currencyManager = APICurrencyManager()
     var amountOfMoney = MoneyAmount()
     var leftController = Controller()
@@ -28,73 +23,43 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var rightCharCode = "RUB"
     var leftCurrency:Bool? = nil
     
+    // MARK: - Lifecycle
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+        removeKeyboard()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
+        removeKeyboard()
         return true
     }
     
-    
-    
-    
-    @IBAction func rightTextFieldChanged(_ sender: Any) {
-        let rightCurencyValue = rightController.getCurrencyValue()
-        let leftCurencyValue = leftController.getCurrencyValue()
-        amountOfMoney.rightMoneyAmount = Double(rightNumberField.text ?? "0") ?? 0
-        let roundedValue = String(( amountOfMoney.rightMoneyAmount * rightCurencyValue / leftCurencyValue * 100).rounded(.toNearestOrEven) / 100)
-        leftNumberField.text = String(roundedValue)
-        self.view.endEditing(true)
-    }
-    
-    @IBAction func leftTextFieldChanged(_ sender: Any) {
-        let rightCurencyValue = rightController.getCurrencyValue()
-        let leftCurencyValue = leftController.getCurrencyValue()
-        amountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
-        let roundedValue = String(( amountOfMoney.leftMoneyAmount * leftCurencyValue / rightCurencyValue * 100).rounded(.toNearestOrEven) / 100)
-        rightNumberField.text = String(roundedValue)
-        self.view.endEditing(true)
-    }
-    
-    
-    
-    @IBAction func unwindToMainScreen(seque: UIStoryboardSegue) {
-        leftController.getData(charCode: leftCharCode)
-        rightController.getData(charCode: rightCharCode)
-    }
-    
-    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        rightNumberField.delegate = self
-        leftNumberField.delegate = self
         
-        leftController.getData(charCode: leftCharCode)
-        rightController.getData(charCode: rightCharCode)
+        textFiledsDelegate()
+        getContollersData()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        leftController.getData(charCode: leftCharCode)
-        rightController.getData(charCode: rightCharCode)
+        getContollersData()
         
         let leftCurencyValue = leftController.getCurrencyValue()
         let rightCurencyValue = rightController.getCurrencyValue()
         
-        
+        //Checking if LeftChangeCurrencyButton or rightChangeCurrencyButton was touched
         if leftCurrency != nil {
+            //checking is it left or right button
             if leftCurrency == false {
-                amountOfMoney.rightMoneyAmount = Double(rightNumberField.text ?? "0") ?? 0
-                let roundedValue = String(( amountOfMoney.rightMoneyAmount * rightCurencyValue / leftCurencyValue * 100).rounded(.toNearestOrEven) / 100)
-                leftNumberField.text = String(roundedValue)
+                setRightMoneyAmount()
+                let roundedValueString = getRightFinalConvertion(rightCurencyValue: rightCurencyValue, leftCurencyValue: leftCurencyValue)
+                setLefttNumberField(text: roundedValueString)
             }
             if leftCurrency == true {
-                amountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
-                let roundedValue = String(( amountOfMoney.leftMoneyAmount * leftCurencyValue / rightCurencyValue * 100).rounded(.toNearestOrEven) / 100)
-                rightNumberField.text = String(roundedValue)
+                setLeftMoneyAmount()
+                let roundedValueString = getLeftFinalConvertion(rightCurencyValue: rightCurencyValue, leftCurencyValue: leftCurencyValue)
+                setRightNumberField(text: roundedValueString)
             }
         }
     }
@@ -102,17 +67,80 @@ class ViewController: UIViewController,UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let currencyList = segue.destination as! CurrencyList
         if segue.identifier == "leftButtonSeque"{
+            //set property for side of button
             currencyList.leftCurrency = true
             leftCurrency = true
-        } else {            
+        } else {
             currencyList.leftCurrency = false
             leftCurrency = false
         }
     }
     
+    // MARK: - Private Methods
+    
+    private func removeKeyboard() {
+        self.view.endEditing(true)
+    }
+    
+    private func textFiledsDelegate() {
+        rightNumberField.delegate = self
+        leftNumberField.delegate = self
+    }
+    
+    private func getContollersData() {
+        leftController.getData(charCode: leftCharCode)
+        rightController.getData(charCode: rightCharCode)
+    }
+    
+    private func setRightMoneyAmount() {
+        amountOfMoney.rightMoneyAmount = Double(rightNumberField.text ?? "0") ?? 0
+    }
+    
+    private func setLeftMoneyAmount() {
+        amountOfMoney.leftMoneyAmount = Double(leftNumberField.text ?? "0") ?? 0
+    }
+    
+    private func getRightFinalConvertion (rightCurencyValue:Double,leftCurencyValue:Double ) -> String {
+        return String(( amountOfMoney.rightMoneyAmount * rightCurencyValue / leftCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+    }
+    
+    private func getLeftFinalConvertion (rightCurencyValue:Double,leftCurencyValue:Double ) -> String {
+        return  String(( amountOfMoney.leftMoneyAmount * leftCurencyValue / rightCurencyValue * 100).rounded(.toNearestOrEven) / 100)
+    }
+    
+    private func setRightNumberField(text:String) {
+        rightNumberField.text = String(text)
+    }
+    
+    private func setLefttNumberField(text:String) {
+        leftNumberField.text = String(text)
+    }
+    
+    // MARK: - IBActions
+    
+    @IBAction func rightTextFieldChanged(_ sender: Any) {
+        let rightCurencyValue = rightController.getCurrencyValue()
+        let leftCurencyValue = leftController.getCurrencyValue()
+        setRightMoneyAmount()
+        let roundedValueString = getRightFinalConvertion(rightCurencyValue: rightCurencyValue, leftCurencyValue: leftCurencyValue)
+        setLefttNumberField(text: roundedValueString)
+        removeKeyboard()
+    }
+    
+    @IBAction func leftTextFieldChanged(_ sender: Any) {
+        let rightCurencyValue = rightController.getCurrencyValue()
+        let leftCurencyValue = leftController.getCurrencyValue()
+        setLeftMoneyAmount()
+        let roundedValueString = getLeftFinalConvertion(rightCurencyValue: rightCurencyValue, leftCurencyValue: leftCurencyValue)
+        setRightNumberField(text: roundedValueString)
+        removeKeyboard()
+    }
+    
+    @IBAction func unwindToMainScreen(seque: UIStoryboardSegue) {
+        getContollersData()
+    }
     
 }
-
 
 
 

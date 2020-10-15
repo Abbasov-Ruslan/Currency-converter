@@ -31,7 +31,7 @@
                     <navigationItem key="navigationItem" title="Конвертер валют" id="ywy-kN-uLe"/>
                     <connections>
                         <outlet property="toggleActivityIndicator" destination="Tpp-FI-HGt" id="chs-UZ-DeA"/>
-                        <segue destination="Umj-Wr-wCk" kind="modal" identifier="firstSeque" modalPresentationStyle="fullScreen" id="1hI-tM-GZE"/>
+                        <segue destination="Umj-Wr-wCk" kind="presentation" identifier="firstSeque" modalPresentationStyle="fullScreen" id="1hI-tM-GZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJ4-d1-e7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -229,6 +229,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Umj-Wr-wCk" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Pkf-WY-HPV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gdW-SC-9AQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -262,7 +263,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZQe-Kv-nUX"/>
+        <segue reference="6l6-92-0yC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icons8-данные-в-обоих-направлениях-100" width="100" height="100"/>

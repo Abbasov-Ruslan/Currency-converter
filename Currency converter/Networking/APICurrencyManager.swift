@@ -1,15 +1,6 @@
-//
-//  APICurrencyManager.swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 10.10.2020.
-//
-
 import Foundation
 
 enum CurrencyType: FinalURLPoint {
-    
-    //    case Current(apiKey: String, currencyId: String)
     
     case Current(Void)
     

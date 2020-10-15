@@ -1,10 +1,3 @@
-//
-//  CurrentCurency.swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 11.10.2020.
-//
-
 import Foundation
 import UIKit
 

@@ -1,10 +1,3 @@
-//
-//  CurrencyList.swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 13.10.2020.
-//
-
 import UIKit
 
 
@@ -66,6 +59,7 @@ class CurrencyList: UITableViewController {
             let viewController = segue.destination as! ViewController
             
             if leftCurrency{
+                // set label for currency, currencys charcode and property for side of button
                 viewController.leftCharCodeLabel.text = charCodeArray[indexPath.row]
                 viewController.leftCharCode = charCodeArray[indexPath.row]
                 viewController.leftCurrency = true

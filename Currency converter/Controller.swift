@@ -1,11 +1,5 @@
-//
-//  Controller.swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 13.10.2020.
-//
-
 import Foundation
+
 class Controller {
     lazy var currencyManager = APICurrencyManager()
     var AmountOfMoney = MoneyAmount()

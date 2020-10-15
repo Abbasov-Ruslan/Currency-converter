@@ -1,10 +1,3 @@
-//
-//  ActivityController.swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 13.10.2020.
-//
-
 import UIKit
 
 

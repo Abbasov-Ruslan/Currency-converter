@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 09.10.2020.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

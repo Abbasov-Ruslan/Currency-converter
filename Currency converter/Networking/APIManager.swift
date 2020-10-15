@@ -1,10 +1,3 @@
-//
-//  APIManager.swift
-//  Currency converter
-//
-//  Created by Ruslan Abbasov on 10.10.2020.
-//
-
 import Foundation
 
 typealias JSONTask = URLSessionDataTask
@@ -83,7 +76,8 @@ extension APIManager {
                 if let value = parse(json) {
                     complitionHandler(.Succes(value))
                 } else {
-                    _ = NSError(domain: CCNetworkingErrorDomain, code: 200, userInfo: nil)
+                    let error  = NSError(domain: CCNetworkingErrorDomain, code: 200, userInfo: nil)
+                    complitionHandler(.Failure(error))
                 }
             })
         }
